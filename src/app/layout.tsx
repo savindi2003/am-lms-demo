@@ -15,11 +15,9 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Milan Pitagaldeniya",
+  title: "LMS",
   description: "Online Learning Platform",
-  icons: {
-    icon: "/icon.png",
-  },
+  
 };
 
 export default function RootLayout({
