@@ -36,7 +36,7 @@ export default function NavBar({ user }: { user: CurrentUserDTO }) {
     <nav className="w-full border-b border-slate-200 bg-white">
       <div className="container mx-auto flex items-center justify-between px-4 py-2">
         {/* Brand */}
-        <Logo logoUrl="/logo/logo1.png" linkUrl="/dashboard" />
+        <Logo logoUrl="/logo/logo.png" linkUrl="/dashboard" />
 
         {/* Desktop (md+) */}
         <div className="hidden lg:flex items-center gap-4">

@@ -30,22 +30,40 @@ export default async function HomePage() {
     <div className="min-h-screen flex flex-col">
       <HomeNavBar />
 
-      <HeroSection />
+      <section id="hero" className="bg-yellow-400 scroll-mt-24">
+        <div className="mx-auto max-w-7xl sm:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-center">
+            <div className="order-1 md:order-1 flex justify-center">
+              <Image
+                src="/primary/primary-home-header.png"
+                alt="Hero section"
+                width={250}
+                height={300}
+                priority
+                className="w-full max-w-xs"
+                sizes="(min-width:1024px) 480px, (min-width:640px) 360px, 240px"
+              />
+            </div>
+            <div className="order-2 md:order-2 text-center md:text-left mb-5">
+              <h1 className="text-2xl sm:text-4xl lg:text-6xl font-bold text-slate-800 leading-tight">
+                Discover New Skills Today, Create Endless Possibilities
+                Tomorrow{" "}
+              </h1>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Blurb */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-700 mb-4">
-              Your Pathway to A Grade Success in Science
+              Boost your knowledge and have fun doing it.
             </h2>
             <p className="text-slate-700 text-sm sm:text-base mb-4">
-              Join engaging live classes designed to make science simple and enjoyable.
-              Master every concept with theory lessons, focused revision, and in-depth paper discussions all in one place.
-              <br /><br />
-              Never miss a lesson with unlimited access to recorded sessions 📚
-              <br /><br />
-              Strengthen your understanding with past papers and MCQ practice, and steadily build your knowledge to reach excellence in Science 🚀
+              From your first click to your biggest achievement, we believe
+              every learner deserves a gentle path to growth
             </p>
             {/*<Button className="cursor-pointer text-base sm:text-lg">*/}
             {/*  See More*/}
@@ -53,13 +71,13 @@ export default async function HomePage() {
           </div>
           <div className="flex justify-center">
             <Image
-              src="/primary/teaching-photo.png"
+              src="/primary/teaching-photo-d.jpg"
               alt="Instructor teaching"
-              width={520}
-              height={360}
+              width={640}
+              height={420}
               priority
-              className="w-full max-w-sm md:max-w-md h-auto rounded-xs object-cover"
-              sizes="(min-width:1024px) 520px, (min-width:640px) 420px, 100vw"
+              className="w-full max-w-md md:max-w-lg h-auto rounded-xs object-cover"
+              sizes="(min-width:1024px) 640px, (min-width:640px) 520px, 100vw"
             />
           </div>
         </div>
@@ -83,7 +101,9 @@ export default async function HomePage() {
         </div>
       </section>
 
-
+      <section id="about" className="scroll-mt-24">
+        <AboutUs />
+      </section>
 
       {/* Contact (simple in-page section to scroll to) */}
       <section id="contact" className="bg-white py-16 sm:py-20 scroll-mt-24">
@@ -94,7 +114,7 @@ export default async function HomePage() {
           <p className="text-slate-800 max-w-2xl mx-auto mb-8 bg-yellow-400 w-fit p-2 sm:rounded rounded font-medium flex flex-col sm:flex-row sm:gap-1">
             Reach us at{" "}
             <a href="mailto:hello@example.com" className="underline">
-              milan.pitagaldeniya@gmail.com
+              hello@example.com
             </a>{" "}
             <span>or call +94 11 123 4567</span>
           </p>

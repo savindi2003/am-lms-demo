@@ -8,7 +8,7 @@ function Footer() {
       <div className="mx-auto max-w-6xl py-10 grid grid-cols-1 gap-8 md:grid-cols-2">
         {/* Brand + Social */}
         <div>
-          <h3 className="text-xl font-bold">Milan Pitagaldeniya</h3>
+          <h3 className="text-xl font-bold">Alpha Media Academy</h3>
           <p className="mt-2 text-sm text-slate-600">
             Learn. Practice. Achieve.
           </p>
