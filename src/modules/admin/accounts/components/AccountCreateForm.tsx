@@ -123,7 +123,7 @@ export default function AccountCreateForm({
     <form onSubmit={handleSubmit(onSubmit)} className="mb-6 grid gap-3 p-4">
       <h3 className="text-lg font-semibold text-slate-700">Add account</h3>
 
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 md:min-w-5xl">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3">
         {/* Role */}
         <div className="flex flex-col gap-1">
           <label className="text-xs font-medium text-slate-700">User Role</label>

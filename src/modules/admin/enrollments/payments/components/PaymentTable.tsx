@@ -16,7 +16,7 @@ export default function PaymentTable({
   return (
     <div className="overflow-x-auto border bg-white">
       <Table>
-        <Table.Header styles="grid grid-cols-4 md:grid-cols-4 px-4 py-3 text-sm font-medium bg-gray-100"> 
+        <Table.Header styles="grid grid-cols-3 md:grid-cols-3 px-4 py-3 text-sm font-medium bg-gray-100"> 
           <div role="columnheader" className="min-w-0 truncate">
             Amount
           </div>

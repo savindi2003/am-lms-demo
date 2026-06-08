@@ -25,14 +25,14 @@ export default function Page() {
   const [students, setStudents] = useState<any[]>([]);
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(false);
-  const [saving , setSaving] = useState(false);
+  const [saving, setSaving] = useState(false);
 
   // load dropdowns
   useState(() => {
     getFilters().then(setOptions);
   });
 
-  
+
   const loadStudents = async () => {
     setLoading(true);
     if (!filters.classId || !filters.lectureId) {
@@ -45,7 +45,7 @@ export default function Page() {
       classId: filters.classId,
       lectureId: filters.lectureId,
     });
-     
+
     setLoading(false);
     setStudents(data);
   };
@@ -64,8 +64,8 @@ export default function Page() {
   };
 
   const handleClearAll = () => {
-  //reload
-};
+    //reload
+  };
 
   // SAFE SEARCH
   const filteredStudents = students.filter((s) => {
@@ -78,7 +78,10 @@ export default function Page() {
   });
 
   return (
-    <div className="p-5 space-y-4">
+    <div className="container mx-auto px-4 md:px-0 lg:px-0">
+      <h1 className="text-3xl font-semibold mb-5">
+        Student Attendance
+      </h1>
 
       <AttendanceFilters
         filters={filters}
@@ -88,22 +91,22 @@ export default function Page() {
         loading={loading}
       />
 
-      
+
       <div className="flex flex-col md:flex-row md:items-center justify-end gap-3 ">
 
-        
 
-      {students.length > 0 && (
-        <input
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          placeholder="Search name or NIC"
-          className="input w-full md:w-80 text-sm justify-end"
-        />
-      )}
+
+        {students.length > 0 && (
+          <input
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder="Search name or NIC"
+            className="input w-full md:w-80 text-sm justify-end my-3"
+          />
+        )}
 
       </div>
-      
+
       <AttendanceTable
         students={filteredStudents}
         setStudents={setStudents}
@@ -111,14 +114,14 @@ export default function Page() {
       />
 
       {students.length > 0 && (
-            <Button onClick={handleSave} >
-              {saving ? "Loading..." : "Save Attendance"}
-            </Button>
+        <Button onClick={handleSave} className="mt-4" disabled={saving}>
+          {saving ? "Loading..." : "Save Attendance"}
+        </Button>
       )}
 
       {(students.length > 0 || Object.keys(filters).length > 0) && (
         <Button
-          variant="secondary" className="mx-2"
+          variant="secondary" className="mx-2 mt-4"
           onClick={handleClearAll}
         >
           Clear

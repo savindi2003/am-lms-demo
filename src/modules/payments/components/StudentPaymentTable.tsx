@@ -22,20 +22,18 @@ export default function StudentPaymentTable({
   return (
     <div className="space-y-4">
       {/* filters */}
-      <div className="flex gap-3">
+      <div className="flex flex-col gap-3">
+        <label htmlFor="classType" className="text-xs font-medium text-slate-700">
+          Select month
+        </label>
         <input
           type="month"
           value={month}
           onChange={(e) => setMonth(e.target.value)}
-          className="border p-2 text-sm"
+          className="border p-2 text-sm w-full sm:w-1/2 md:w-1/3 lg:w-1/4"
         />
 
-        <input
-          placeholder="Class Type"
-          value={classType}
-          onChange={(e) => setClassType(e.target.value)}
-          className="border p-2 text-sm"
-        />
+
       </div>
 
       {/* table */}

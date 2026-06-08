@@ -119,7 +119,7 @@ export default function ClassPackagesPage() {
   // ui
   return (
 
-    <section className="container py-8 space-y-10">
+    <section className="container py-8 space-y-10 mx-auto px-4 md:px-0 lg:px-0">
 
       {/* HEADER */}
       <div>

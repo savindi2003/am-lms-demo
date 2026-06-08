@@ -18,7 +18,7 @@ export default function PaymentsClient() {
 
     return (
         <section>
-            <div className="flex justify-between my-6">
+            <div className="flex flex-col gap-4 my-6 lg:flex-row lg:justify-between">
                 <div>
                     <h1 className="text-2xl font-semibold mb-4">Payments</h1>
 
@@ -26,12 +26,11 @@ export default function PaymentsClient() {
                         month={month}
                         setMonth={(m: any) => {
                             setMonth(m);
-                            
                         }}
                     />
                 </div>
 
-                <div className="w-72">
+                <div className="w-full lg:w-72">
                     <PaymentsSummaryCard
                         total={data?.totalEarnings}
                         month={month}

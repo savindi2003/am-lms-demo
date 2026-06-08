@@ -87,7 +87,7 @@ export default function AccountTableRow({
         <div className="text-xs text-white bg-slate-500 w-max px-1">
           {user.userId}
         </div>
-        
+
       </td>
 
       {/* EMAIL */}

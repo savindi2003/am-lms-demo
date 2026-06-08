@@ -1,5 +1,3 @@
-
-
 export default function AttendanceRow({
   data,
   index,
@@ -33,25 +31,23 @@ export default function AttendanceRow({
       </div>
 
       {/* ACTION */}
-      <div className="flex gap-2">
+      <div className="flex gap-2 justify-end">
         <button
           onClick={() => toggle(true)}
-          className={`px-2 py-1 text-sm ${
-            data.present
+          className={`px-2 py-1 text-sm ${data.present
               ? "bg-green-600 text-white"
               : "bg-gray-200"
-          }`}
+            }`}
         >
           Present
         </button>
 
         <button
           onClick={() => toggle(false)}
-          className={`px-2 py-1 text-xs ${
-            !data.present
+          className={`px-2 py-1 text-xs ${!data.present
               ? "bg-red-600 text-white"
               : "bg-gray-200"
-          }`}
+            }`}
         >
           Absent
         </button>

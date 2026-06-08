@@ -44,7 +44,7 @@ export default function StudentRow({
   }
 
   return (
-    <Table.Row styles="grid md:grid-cols-7 px-4 py-3 items-center">
+    <Table.Row styles="grid grid-cols-7 px-4 py-3 items-center">
 
       {/* STUDENT */}
       <div>
@@ -59,10 +59,10 @@ export default function StudentRow({
         </span>
       </div>
 
-      
+
       <div className="text-sm text-gray-700">
-  {enrollment.class?.classType?.name || "-"}
-</div>
+        {enrollment.class?.classType?.name || "-"}
+      </div>
 
       <div className="text-sm text-gray-700">
         {enrollment.class?.description}
@@ -111,8 +111,8 @@ export default function StudentRow({
 
               {/* PAYMENTS */}
               <Menus.ButtonMenu
-              
-                icon={<HiOutlineBanknotes size={16} />} 
+
+                icon={<HiOutlineBanknotes size={16} />}
                 variant="menu"
                 onClick={() =>
                   router.push(
