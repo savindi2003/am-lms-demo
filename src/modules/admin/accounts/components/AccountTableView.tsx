@@ -40,9 +40,11 @@ export default function AccountTableView({
   return (
     <div className="space-y-4">
       {/* FILTERS */}
-      <div className="flex gap-3">
+      <div className="grid grid-cols-1 gap-3 md:grid-cols-2 sm:w-full md:w-2/3 lg:w-2/3">
         <div className="flex flex-col gap-1">
-          <label className="text-xs font-medium text-slate-700">Student Email</label>
+          <label className="text-xs font-medium text-slate-700">
+            Student Email
+          </label>
           <input
             className="border p-2 text-sm"
             placeholder="Search..."
@@ -51,21 +53,20 @@ export default function AccountTableView({
           />
         </div>
 
-
-        <div className="flex gap-3">
-          <div className="flex flex-col gap-1">
-            <label className="text-xs font-medium text-slate-700">User Role</label>
-            <select
-              className="border p-2 text-sm"
-              value={role}
-              onChange={(e) => setRole(e.target.value)}
-            >
-              <option value="ALL">All</option>
-              <option value="ADMIN">ADMIN</option>
-              <option value="INSTRUCTOR">INSTRUCTOR</option>
-              <option value="STUDENT">STUDENT</option>
-            </select>
-          </div>
+        <div className="flex flex-col gap-1">
+          <label className="text-xs font-medium text-slate-700">
+            User Role
+          </label>
+          <select
+            className="border p-2 text-sm"
+            value={role}
+            onChange={(e) => setRole(e.target.value)}
+          >
+            <option value="ALL">All</option>
+            <option value="ADMIN">ADMIN</option>
+            <option value="INSTRUCTOR">INSTRUCTOR</option>
+            <option value="STUDENT">STUDENT</option>
+          </select>
         </div>
       </div>
 
