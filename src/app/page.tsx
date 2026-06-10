@@ -7,6 +7,8 @@ import FreeLectureList from "@/modules/home/components/FreeLectureList";
 import FreeLectureSlider from "@/modules/home/components/FreeLectureSlider";
 import HeroSection from "@/modules/home/components/HeroSection";
 import PastFreeClassSlider from "@/modules/home/components/PastFreeClassSlider";
+import FAQSection from "@/modules/home/components/FQA";
+import InquirySection from "@/modules/home/components/InquiryForm";
 
 export default async function HomePage() {
   const courses = await getCourses();
@@ -105,6 +107,10 @@ export default async function HomePage() {
         <AboutUs />
       </section>
 
+      <section className="py-20 bg-gray-50">
+         <FAQSection />
+      </section>
+
       {/* Contact (simple in-page section to scroll to) */}
       <section id="contact" className="bg-white py-16 sm:py-20 scroll-mt-24">
         <div className="mx-auto max-w-4xl lg:px-8 text-center">
@@ -119,6 +125,10 @@ export default async function HomePage() {
             <span>or call +94 11 123 4567</span>
           </p>
         </div>
+      </section>
+
+      <section className="py-20">
+        <InquirySection />
       </section>
 
 

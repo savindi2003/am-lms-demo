@@ -241,3 +241,62 @@ ${process.env.NEXT_PUBLIC_APP_URL}
   `,
 });
 }
+
+
+export async function sendInquiryEmail(data: {
+  fullName: string;
+  email: string;
+  phoneNumber: string;
+  subject: string;
+  message: string;
+}) {
+  const transporter = createTransport();
+
+  await transporter.sendMail({
+    from: `LMS Website <${process.env.EMAIL_FROM}>`,
+    to: process.env.INQUIRY_EMAIL,
+
+    subject: `New Inquiry - ${data.subject}`,
+
+    replyTo: data.email,
+
+    html: `
+      <div style="font-family: Arial, sans-serif; max-width: 600px;">
+        <h2>New Inquiry Received</h2>
+
+        <p>A new inquiry has been submitted through your LMS website.</p>
+
+        <hr />
+
+        <p><strong>Full Name:</strong> ${data.fullName}</p>
+        <p><strong>Email:</strong> ${data.email}</p>
+        <p><strong>Phone Number:</strong> ${data.phoneNumber}</p>
+        <p><strong>Subject:</strong> ${data.subject}</p>
+
+        <p><strong>Message:</strong></p>
+
+        <div
+          style="
+            padding:12px;
+            background:#f8fafc;
+            border-radius:8px;
+          "
+        >
+          ${data.message}
+        </div>
+      </div>
+    `,
+
+    text: `
+New Inquiry Received
+
+Full Name: ${data.fullName}
+Email: ${data.email}
+Phone Number: ${data.phoneNumber}
+Subject: ${data.subject}
+
+Message:
+${data.message}
+`,
+  });
+}
