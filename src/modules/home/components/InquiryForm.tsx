@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 export default function InquirySection() {
     const [loading, setLoading] = useState(false);
@@ -51,9 +52,7 @@ export default function InquirySection() {
                 throw new Error(data.message);
             }
 
-            alert(
-                "Inquiry submitted successfully!"
-            );
+            toast.success("Inquiry sent successfully!");
 
             setForm({
                 fullName: "",
@@ -63,7 +62,7 @@ export default function InquirySection() {
                 message: "",
             });
         } catch (error) {
-            alert(
+            toast.error(
                 error instanceof Error
                     ? error.message
                     : "Something went wrong"
